@@ -1,0 +1,31 @@
+ {
+     "flags":{
+        "dynamic":"True",
+        "localMinima":"False",
+        "showFrames":"False",
+        "record":"True",
+        "globalQ":"False",
+        "communicate":"False",
+        "save_csv":"True",
+        "save_tables_videos":"False ",
+        "DDPG_log_flag_allow":"True"
+     },
+     "vals":{
+        "Lx":"round(2,2)",
+        "Ly":"round(4,2)",
+        "cueRaduis":"round(0.7,2)",
+        "visibleRaduis":"round(0.3,3)",
+        "iteration":"1",
+        "samplingPeriodSmall":"10",
+        "FinalTime":"100_000",
+        "HalfTime":"100_000//2",
+        "ROBN":"10",
+        "paramReductionMethod":"VDBE",
+        "PRMparameter":"1",
+        "comment":"Q table extract ",
+        "commentDividerChar":" x ",
+        "method":"RL",
+        "noise":"0",
+        "seed_value":"100" 
+        }}
+
