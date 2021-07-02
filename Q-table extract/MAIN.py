@@ -92,7 +92,9 @@ def LOG():
                         sup.visualize() 
                     '''save csvs '''
                     if save_csv:
-                        QtableRob0 = sup.getQtables()[0]
+                        #! QtableRob0 = sup.getQtables()[0]
+                        # QtableRob0 = np.mean(sup.getQtables(),axis=0)
+                        QtableRob0 = np.max(sup.getQtables(),axis=0)
                         np.savetxt(codeBeginTime+dirChangeCharacter+'csvs'+dirChangeCharacter+str(
                             sup.getTime())+".csv", np.round(QtableRob0, 2), delimiter=",")
 
@@ -271,8 +273,8 @@ if __name__ == "__main__" or True:
     saved = 0
     print(colored('[+] '+method, 'green'))
     print(colored('[+] press ctrl+c for saving data asynchronously', 'green'))
-    # QtableMem=np.zeros((iteration,ROBN,7,44)) ##### caviat
-    QtableMem = np.zeros((iteration, ROBN, 7, 6))  # caviat
+    QtableMem=np.zeros((iteration,ROBN,7,44)) #!#### caviat
+    # QtableMem = np.zeros((iteration, ROBN, 7, 6))  #! caviat
 
     log = np.zeros((iteration, sampledDataNum, ROBN, 3))
     if paramReductionMethod == 'classical' or paramReductionMethod == 'cyclical':

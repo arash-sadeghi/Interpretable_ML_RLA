@@ -245,14 +245,15 @@ class SUPERVISOR:
         self.desiredPosDistpx=10
 
 
-        # angles=np.arange(0,180+18,18)
-        angles=np.array([35,70,70+35])
+        angles=np.arange(0,180+18,18)
+        # angles=np.array([35,70,70+35])
         # self.maxlen=int(16*512/9.2)*sqrt(2) # caviat
         # self.maxlen=int(1*512/2)
         self.maxlen=int(np.sqrt(self.Xlen**2+self.Ylen**2)) #* max len is the diagonal of the arena
 
 
-        lens=[self.maxlen//2,2*self.maxlen//2]
+        # lens=[self.maxlen//2,2*self.maxlen//2]
+        lens=[4*self.maxlen//4,3*self.maxlen//4,2*self.maxlen//4,1*self.maxlen//4]
         self.actionSpace=list(product(lens,angles))
 
         self.numberOfStates=7
@@ -287,7 +288,7 @@ class SUPERVISOR:
             return a*exp(-((x-b)**2)/(2*(c**2)))
         im=np.zeros((Lxpx,Lypx))
         for i in range(0,R):
-            cv.circle(im,(int((Lypx/2)),int(Lxpx/2)),i,gauss(Lxpx/2-i),2)
+            cv.circle(im,(int((3*Lypx/4)),int(Lxpx/2)),i,gauss(Lxpx/2-i),2)
         
         print(colored('[!] cue is completely black','red'))
 
